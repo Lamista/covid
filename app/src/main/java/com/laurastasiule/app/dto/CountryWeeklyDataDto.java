@@ -1,31 +1,21 @@
-package com.laurastasiule.app.domain;
+package com.laurastasiule.app.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class CountryWeeklyDataDto {
 
-@Entity
-public class CountryWeeklyInfo {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
     private String country;
     private String year_week;
     private int cases;
     private int deaths;
 
-    public CountryWeeklyInfo() {
+    public CountryWeeklyDataDto() {
 
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+    public CountryWeeklyDataDto(String country, String year_week, int cases, int deaths) {
+        this.country = country;
+        this.year_week = year_week;
+        this.cases = cases;
+        this.deaths = deaths;
     }
 
     public String getCountry() {
