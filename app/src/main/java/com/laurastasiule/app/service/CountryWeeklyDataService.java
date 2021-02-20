@@ -37,7 +37,7 @@ public class CountryWeeklyDataService {
         return list;
     }
 
-//    public List<String> getAllCountries() {
-//        return repository.findALlCountries();
-//    }
+    public List<String> getAllCountries() {
+        return repository.findALlCountries();
+    }
 }

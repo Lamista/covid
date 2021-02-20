@@ -54,13 +54,16 @@ public class App extends SpringBootServletInitializer {
 		return args -> {
 			ObjectMapper mapper = new ObjectMapper();
 			TypeReference<List<CountryWeeklyData>> typeReference = new TypeReference<>() {};
-//			InputStream inputStream = TypeReference.class.getResourceAsStream(DATA_URL);
+
 			try(InputStream inputStream = new java.net.URL(DATA_URL).openStream()) {
 				List<CountryWeeklyData> allData = mapper.readValue(inputStream, typeReference);
 				service.save(allData);
 				System.out.println("-----------------------------Data saved!-------------------------------");
 			} catch (IOException e) {
-				System.out.println("--------------------------------Unable to save data: " + e.getMessage() + "------------------------------------");
+				System.out.println(
+						"--------------------------------Unable to save data: "
+						+ e.getMessage()
+						+ "------------------------------------");
 			}
 		};
 	}
