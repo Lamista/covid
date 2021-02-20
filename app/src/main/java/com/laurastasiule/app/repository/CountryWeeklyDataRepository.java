@@ -9,6 +9,6 @@ import java.util.Optional;
 
 public interface CountryWeeklyDataRepository extends JpaRepository<CountryWeeklyData, Long> {
 
-//    @Query("SELECT DISTINCT c.country FROM CountryWeeklyData c ORDER BY c.country")
-//    List<String> findALlCountries();
+    @Query("SELECT DISTINCT c.country FROM CountryWeeklyData c WHERE c.country NOT LIKE '%total%'")
+    List<String> findALlCountries();
 }

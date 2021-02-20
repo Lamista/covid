@@ -22,13 +22,14 @@ public class CountryWeeklyDataController {
     }
 
     @GetMapping("/all")
+    @ApiOperation(value = "Get all data", notes = "Returns all data")
     public List<CountryWeeklyData> getAll () {
         return service.getAll();
     }
 
-//    @RequestMapping(method = RequestMethod.GET, path = "/countries")
-//    @ApiOperation(value = "Get Data by country", notes = "Returns all weekly Data by country name")
-//    List<String> getAllCountries() {
-//        return service.getAllCountries();
-//    }
+    @RequestMapping(method = RequestMethod.GET, path = "/countries")
+    @ApiOperation(value = "Get countries", notes = "Returns list of country names")
+    List<String> getAllCountries() {
+        return service.getAllCountries();
+    }
 }
