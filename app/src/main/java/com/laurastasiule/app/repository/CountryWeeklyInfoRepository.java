@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface CountryWeeklyInfoRepository extends JpaRepository<CountryWeeklyInfo, String> {
 
-    @Query("SELECT distinct c.country FROM CountryWeeklyInfo c ORDER BY c.country")
+    @Query("SELECT DISTINCT c.country FROM CountryWeeklyInfo c ORDER BY c.country")
     List<String> findALlCountries();
 }
