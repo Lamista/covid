@@ -22,7 +22,7 @@ public class CountryWeeklyDataService {
         return repository.findAll();
     }
 
-    public CountryWeeklyData save (CountryWeeklyData data ) {
+    public CountryWeeklyData save(CountryWeeklyData data ) {
         return repository.save(data);
     }
 
