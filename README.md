@@ -1,9 +1,9 @@
 # Covid-19 statistics
 
 ## Examples
-![Main Page - statistics of all countries](/readme/Main.png)
-![Statistics of one country](/readme/Argentina.png)
-![Information on point hover](/readme/Turkey.png)
+![Main Page - statistics of all countries](covid/readme/Main.png)
+![Statistics of one country](covid/readme/Argentina.png)
+![Information on point hover](covid/readme/Turkey.png)
 
 ## Tools
 
