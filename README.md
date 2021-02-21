@@ -23,7 +23,7 @@ Project is based on layered architecture pattern.
 * Service - Bussines logic layer.
 * Domain - DATA layer.
 
-## Running in an Embedded Tomcat container
+## Running in an Embedded Tomcat
 To run app from war file
 ```
 mvn clean install org.codehaus.cargo:cargo-maven2-plugin:1.7.7:run -Dcargo.maven.containerId=tomcat9x -Dcargo.servlet.port=8080 -Dcargo.maven.containerUrl=https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/9.0.40/tomcat-9.0.40.zip
