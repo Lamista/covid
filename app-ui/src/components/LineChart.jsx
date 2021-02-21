@@ -4,14 +4,12 @@ import { Line } from "react-chartjs-2";
 
 
 const LineChart = ({ chartData }) => {
-    // console.log(chartData);
-
     const data = {
-        labels: ['2020-01', '2', '3', '4', '5', '6'],
+        labels: chartData.year_weeks,
         datasets: [
             {
                 label: 'Cases/week',
-                data: [12, 19, 3, 5, 2, 3],
+                data: chartData.casesPerWeek,
                 fill: false,
                 backgroundColor: 'rgb(54, 162, 235)',
                 borderColor: 'rgba(54, 162, 235, 0.2)',
@@ -19,7 +17,7 @@ const LineChart = ({ chartData }) => {
             },
             {
                 label: 'Deaths/week',
-                data: [1, 2, 1, 1, 2, 2],
+                data: chartData.deathsPerWeek,
                 fill: false,
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgba(255, 99, 132, 0.2)',

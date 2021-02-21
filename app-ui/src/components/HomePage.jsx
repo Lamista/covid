@@ -26,6 +26,7 @@ class HomePage extends Component {
         let countryName = e.target.innerHTML;
         this.props.history.push(`/${countryName}`)
         this.setState({ countrySelected: countryName })
+
     }
 
     render() {

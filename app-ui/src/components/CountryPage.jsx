@@ -9,8 +9,7 @@ class CountryPage extends Component {
         super();
         this.state = {
             countries: [],
-            chartData: {},
-            countrySelected: ""
+            chartData: {}
         }
     }
 
@@ -21,17 +20,24 @@ class CountryPage extends Component {
             .catch((err) => console.log(err))
 
         Axios
-            .get(`${baseUrl}/api/data/${this.props.countrySelected}`)
-            .then((res) => this.setState({ chartData: res.data }))
-            .then(() => console.log(this.state.chartData))
+            .get(`${baseUrl}/api/data/${(window.location.pathname).split("/")[2]}`)
+            .then((res) => {
+                this.setState({ chartData: res.data })
+                console.log(res);
+            })
             .catch((err) => console.log(err))
     }
 
     handleSelect = (e) => {
         e.preventDefault();
         let countryName = e.target.innerHTML;
+        Axios
+            .get(`${baseUrl}/api/data/${countryName}`)
+            .then((res) => {
+                this.setState({ chartData: res.data })
+            })
+            .catch((err) => console.log(err))
         this.props.history.push(`/${countryName}`)
-        this.setState({ countrySelected: countryName })
     }
 
     render() {
