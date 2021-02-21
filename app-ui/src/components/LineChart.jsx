@@ -8,7 +8,7 @@ const LineChart = ({ chartData }) => {
         labels: chartData.year_weeks,
         datasets: [
             {
-                label: 'Cases/week',
+                label: 'cases/week',
                 data: chartData.casesPerWeek,
                 fill: false,
                 backgroundColor: 'rgb(54, 162, 235)',
@@ -16,7 +16,7 @@ const LineChart = ({ chartData }) => {
                 yAxisID: 'y-axis-1',
             },
             {
-                label: 'Deaths/week',
+                label: 'deaths/week',
                 data: chartData.deathsPerWeek,
                 fill: false,
                 backgroundColor: 'rgb(255, 99, 132)',

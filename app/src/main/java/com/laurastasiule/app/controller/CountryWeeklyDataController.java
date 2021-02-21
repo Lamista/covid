@@ -1,6 +1,7 @@
 package com.laurastasiule.app.controller;
 
 import com.laurastasiule.app.domain.CountryWeeklyData;
+import com.laurastasiule.app.dto.AllCaseDeathWeekDto;
 import com.laurastasiule.app.dto.CaseDeathWeekDto;
 import com.laurastasiule.app.service.CountryWeeklyDataService;
 import io.swagger.annotations.Api;
@@ -38,8 +39,10 @@ public class CountryWeeklyDataController {
     @GetMapping(path = "/{country}")
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation(value = "Get information of the country", notes = "Returns week, case and death lists of the country")
-    CaseDeathWeekDto getChartData(@PathVariable("country") String country) {
+    CaseDeathWeekDto getChartData(@PathVariable("country") String country) {return service.getChartData(country); }
 
-        return service.getChartData(country);
-    }
+    @GetMapping(path = "/all-countries")
+    @ResponseStatus(HttpStatus.OK)
+    @ApiOperation(value = "Get information of all countries", notes = "Returns week, case and death lists of all countries")
+    AllCaseDeathWeekDto getChartData() {return service.getAllChartData(); }
 }
