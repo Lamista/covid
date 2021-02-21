@@ -6,14 +6,13 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import './styles/App.css'
 import HomePage from './components/HomePage';
 import NoMatch from './components/NoMatch';
-import CountryPage from './components/CountryPage';
 
-const App = (props) => (
+const App = () => (
   <div>
     <Switch>
       <Route exact path='/' component={HomePage} />
       <Route exact path='/All%20countries' component={HomePage} />
-      <Route path='/:country' component={CountryPage} />
+      <Route path='/:country' component={HomePage} />
       <Route path='*' component={NoMatch} />
       <Route component={NoMatch} />
     </Switch>

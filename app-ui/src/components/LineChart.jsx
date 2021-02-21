@@ -39,9 +39,9 @@ const LineChart = ({ chartData }) => {
         },
     }
     return (
-        <>
+        <div className="container mt-5 mb-4">
             <Line data={data} options={options} />
-        </>
+        </div>
     )
 }
 
