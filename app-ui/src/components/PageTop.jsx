@@ -1,7 +1,7 @@
 import React from 'react';
 import CountriesDropdown from './CountriesDropdown';
 
-const PageTop = ({ countries }) => {
+const PageTop = ({ countries, handleSelect }) => {
     return (
         <div>
             <h1 className="mt-5">COVID-19 statistics</h1>
@@ -11,6 +11,7 @@ const PageTop = ({ countries }) => {
                 <div className="col-6 text-left">
                     <CountriesDropdown
                         countries={countries}
+                        handleSelect={handleSelect}
                     />
                 </div>
             </div>

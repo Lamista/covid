@@ -1,15 +1,12 @@
 package com.laurastasiule.app.service;
 
 import com.laurastasiule.app.domain.CountryWeeklyData;
-import com.laurastasiule.app.dto.CountryWeeklyDataDto;
+import com.laurastasiule.app.dto.CaseDeathWeekDto;
 import com.laurastasiule.app.repository.CountryWeeklyDataRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,7 +21,7 @@ public class CountryWeeklyDataService {
         return repository.findAll();
     }
 
-    public CountryWeeklyData save (CountryWeeklyData data ) {
+    private CountryWeeklyData save (CountryWeeklyData data ) {
         return repository.save(data);
     }
 
@@ -39,5 +36,13 @@ public class CountryWeeklyDataService {
 
     public List<String> getAllCountries() {
         return repository.findALlCountries();
+    }
+
+    public CaseDeathWeekDto getChartData(String country) {
+        var cdw = new CaseDeathWeekDto();
+        cdw.setYear_weeks(repository.getAllYearWeeks(country));
+        cdw.setCasesPerWeek(repository.getAllCasesPerWeek(country));
+        cdw.setDeathsPerWeek(repository.getAllDeathsPerWeek(country));
+        return cdw;
     }
 }
