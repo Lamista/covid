@@ -29,7 +29,7 @@ To run app from war file
 mvn clean install org.codehaus.cargo:cargo-maven2-plugin:1.7.7:run -Dcargo.maven.containerId=tomcat9x -Dcargo.servlet.port=8080 -Dcargo.maven.containerUrl=https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/9.0.40/tomcat-9.0.40.zip
 
 ```
-Or run `mvn clean install` and make a new war file (app.war) in target folder and deploy it to Tomcat server.
+Or run `mvn clean install` to make a new war file (app.war) in target folder and deploy it to Tomcat server.
 ### Application
 ```http://localhost:8080/app```
 ### Swagger
