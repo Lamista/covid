@@ -23,7 +23,6 @@ class CountryPage extends Component {
             .get(`${baseUrl}/api/data/${(window.location.pathname).split("/")[2]}`)
             .then((res) => {
                 this.setState({ chartData: res.data })
-                console.log(res);
             })
             .catch((err) => console.log(err))
     }
@@ -31,13 +30,23 @@ class CountryPage extends Component {
     handleSelect = (e) => {
         e.preventDefault();
         let countryName = e.target.innerHTML;
-        Axios
-            .get(`${baseUrl}/api/data/${countryName}`)
-            .then((res) => {
-                this.setState({ chartData: res.data })
-            })
-            .catch((err) => console.log(err))
-        this.props.history.push(`/${countryName}`)
+        if (countryName === "All countries") {
+            Axios
+                .get(`${baseUrl}/api/data/all-countries`)
+                .then((res) => {
+                    this.setState({ chartData: res.data })
+                })
+                .catch((err) => console.log(err))
+            this.props.history.push(`/`)
+        } else {
+            Axios
+                .get(`${baseUrl}/api/data/${countryName}`)
+                .then((res) => {
+                    this.setState({ chartData: res.data })
+                })
+                .catch((err) => console.log(err))
+            this.props.history.push(`/${countryName}`)
+        }
     }
 
     render() {

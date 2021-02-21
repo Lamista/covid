@@ -1,6 +1,7 @@
 package com.laurastasiule.app.service;
 
 import com.laurastasiule.app.domain.CountryWeeklyData;
+import com.laurastasiule.app.dto.AllCaseDeathWeekDto;
 import com.laurastasiule.app.dto.CaseDeathWeekDto;
 import com.laurastasiule.app.repository.CountryWeeklyDataRepository;
 import org.springframework.stereotype.Service;
@@ -44,5 +45,13 @@ public class CountryWeeklyDataService {
         cdw.setCasesPerWeek(repository.getAllCasesPerWeek(country));
         cdw.setDeathsPerWeek(repository.getAllDeathsPerWeek(country));
         return cdw;
+    }
+
+    public AllCaseDeathWeekDto getAllChartData() {
+        var acdw = new AllCaseDeathWeekDto();
+        acdw.setYear_weeks(repository.getAllYearWeeks());
+        acdw.setCasesPerWeek(repository.getAllCasesPerWeek());
+        acdw.setDeathsPerWeek(repository.getAllDeathsPerWeek());
+        return acdw;
     }
 }
