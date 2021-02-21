@@ -10,15 +10,20 @@ const CountriesDropdown = ({ countries, handleSelect }) => {
                     : (window.location.pathname).split("/")[2].replaceAll("%20", " ").replaceAll("&nbsp;", " ")}
             </button>
             <div className="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton">
-                {(window.location.pathname === "/app" || window.location.pathname === "/app/") && <button className="dropdown-item" onClick={handleSelect}>All countries</button>}
+                {(window.location.pathname !== "/app" && window.location.pathname !== "/app/") && <button className="dropdown-item" style={dropdownBtnStyle} onClick={handleSelect}>All countries</button>}
                 {countries.map((c) => {
                     return (
-                        <button key={c} className="dropdown-item" onClick={handleSelect}>{c}</button>
+                        <button key={c} className="dropdown-item" style={dropdownBtnStyle} onClick={handleSelect}>{c}</button>
                     )
                 })}
             </div>
         </div>
     )
+}
+
+const dropdownBtnStyle = {
+    backgroundColor: "#FFF",
+    color: "#000"
 }
 
 export default CountriesDropdown;
