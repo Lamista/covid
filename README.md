@@ -1,8 +1,11 @@
 # Covid-19 statistics
 
 ## Examples
+* All countries
 ![Main Page - statistics of all countries](readme/Main.PNG)
+* One country
 ![Statistics of one country](readme/Argentina.PNG)
+* Information on hover
 ![Information on point hover](readme/Turkey.PNG)
 
 ## Tools
@@ -20,19 +23,6 @@ Project is based on layered architecture pattern.
 * Service - Bussines logic layer.
 * Domain - DATA layer.
 
-## Spring-boot
-To start the app on default 8080 port
-```mvn spring-boot:run```
-### Swagger
-```http://localhost:8080/swagger-ui/```
-### H2
-```http://localhost:8080/console```
-```
-datasource url: jdbc:h2:mem:app
-username: sa
-password:
-```
-
 ## Embedded Tomcat
 To run app from war file
 ```
@@ -40,10 +30,17 @@ mvn clean install org.codehaus.cargo:cargo-maven2-plugin:1.7.7:run -Dcargo.maven
 
 ```
 Or run `mvn clean install` and make a new war file (app.war) in target folder and deploy it to Tomcat server.
+### Application
+```http://localhost:8080/app```
 ### Swagger
 ```http://localhost:8080/app/swagger-ui/```
 ### H2
 ```http://localhost:8080/app/console```
+```
+datasource url: jdbc:h2:mem:app
+username: sa
+password:
+```
 
 ## Copyright
-&copy; Laura Stasiule
+&copy;LauraStasiule
