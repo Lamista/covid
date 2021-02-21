@@ -1,11 +1,17 @@
 # Covid-19 statistics
 
+## Examples
+![Main](./readme/Main.png)
+![Argentina](./readme/Argentina.png)
+![Info](./readme/Turkey.png)
+
 ## Tools
 
-* Backend - Spring Boot.
-* Frontend - React.
-* Database - H2 SQL database.
-* Additional: Swagger, Maven.
+* Backend - [Spring Boot](https://spring.io/projects/spring-boot)
+* [JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+* Frontend - [React](https://reactjs.org/)
+* Database - [H2](https://www.h2database.com/html/main.html) SQL database
+* Additional: [Swagger](https://swagger.io/), [Maven](https://maven.apache.org/)
 
 ## Project structure
 Project is based on layered architecture pattern. 
@@ -38,3 +44,6 @@ Or run `mvn clean install` and make a new war file (app.war) in target folder an
 ```http://localhost:8080/app/swagger-ui/```
 ### H2
 ```http://localhost:8080/app/console```
+
+## Copyright
+&copy; Laura Stasiule
