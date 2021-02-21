@@ -14,10 +14,10 @@ public interface CountryWeeklyDataRepository extends JpaRepository<CountryWeekly
     @Query("SELECT DISTINCT c.year_week FROM CountryWeeklyData c WHERE c.country = :country")
     List<String> getAllYearWeeks(String country );
 
-    @Query("SELECT c.weekly_count FROM CountryWeeklyData c WHERE c.country = :country AND c.indicator = 'cases' AND c.id < 22413")
+    @Query("SELECT c.weekly_count FROM CountryWeeklyData c WHERE c.country = :country AND c.indicator = 'cases'")
     List<Integer> getAllCasesPerWeek(String country);
 
-    @Query("SELECT c.weekly_count FROM CountryWeeklyData c WHERE c.country = :country AND c.indicator = 'deaths' AND c.id < 22413")
+    @Query("SELECT c.weekly_count FROM CountryWeeklyData c WHERE c.country = :country AND c.indicator = 'deaths'")
     List<Integer> getAllDeathsPerWeek(String country);
 
     @Query("SELECT DISTINCT c.year_week FROM CountryWeeklyData c")
@@ -26,7 +26,6 @@ public interface CountryWeeklyDataRepository extends JpaRepository<CountryWeekly
     @Query("SELECT sum(c.weekly_count) " +
             "FROM CountryWeeklyData c " +
             "WHERE c.indicator = 'cases' " +
-            "AND c.id < 22413 " +
             "AND c.country LIKE '%total%' " +
             "AND c.country NOT LIKE '%EU/EEA%' " +
             "GROUP BY c.year_week")
@@ -35,7 +34,6 @@ public interface CountryWeeklyDataRepository extends JpaRepository<CountryWeekly
     @Query("SELECT sum(c.weekly_count) " +
             "FROM CountryWeeklyData c " +
             "WHERE c.indicator = 'deaths' " +
-            "AND c.id < 22413 " +
             "AND c.country LIKE '%total%' " +
             "AND c.country NOT LIKE '%EU/EEA%' " +
             "GROUP BY c.year_week")

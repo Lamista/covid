@@ -18,21 +18,16 @@ public class CountryWeeklyDataService {
         this.repository = repository;
     }
 
-    public List<CountryWeeklyData> getAll() {
+    public Iterable<CountryWeeklyData> getAll() {
         return repository.findAll();
     }
 
-    private CountryWeeklyData save (CountryWeeklyData data ) {
+    public CountryWeeklyData save (CountryWeeklyData data ) {
         return repository.save(data);
     }
 
-    public List <CountryWeeklyData> save(List<CountryWeeklyData> allData) {
-        List <CountryWeeklyData> list = new ArrayList<>();
-        for (var data : allData) {
-            save(data);
-            list.add(data);
-        }
-        return list;
+    public Iterable <CountryWeeklyData> save(List<CountryWeeklyData> allData) {
+        return repository.saveAll(allData);
     }
 
     public List<String> getAllCountries() {
