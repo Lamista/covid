@@ -23,7 +23,7 @@ Project is based on layered architecture pattern.
 * Service - Bussines logic layer.
 * Domain - DATA layer.
 
-## Embedded Tomcat
+## Running in an Embedded Tomcat container
 To run app from war file
 ```
 mvn clean install org.codehaus.cargo:cargo-maven2-plugin:1.7.7:run -Dcargo.maven.containerId=tomcat9x -Dcargo.servlet.port=8080 -Dcargo.maven.containerUrl=https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/9.0.40/tomcat-9.0.40.zip
@@ -31,11 +31,15 @@ mvn clean install org.codehaus.cargo:cargo-maven2-plugin:1.7.7:run -Dcargo.maven
 ```
 Or run `mvn clean install` to make a new war file (app.war) in target folder and deploy it to Tomcat server.
 ### Application
-```http://localhost:8080/app```
+[http://localhost:8080/app](http://localhost:8080/app)
 ### Swagger
-```http://localhost:8080/app/swagger-ui/```
+[http://localhost:8080/app/swagger-ui/](http://localhost:8080/app/swagger-ui/)
+* GET list of country name - "/api/data/countries", request URL [http://localhost:8080/app/api/data/countries](http://localhost:8080/app/api/data/countries)
+* GET lists of weeks while collecting data, number of cases and deaths of one country - "/api/data/{country}", request URL for Russia [http://localhost:8080/app/api/data/Russia](http://localhost:8080/app/api/data/Russia)
+* GET lists of weeks while collecting data, number of cases and deaths of all countries - "/api/data/all-countries", request URL [http://localhost:8080/app/api/data/all-countries](http://localhost:8080/app/api/data/all-countries)
+* GET all data - "/api/data/all", request URL [http://localhost:8080/app/api/data/all](http://localhost:8080/app/api/data/all)
 ### H2
-```http://localhost:8080/app/console```
+[http://localhost:8080/app/console](http://localhost:8080/app/console)
 ```
 datasource url: jdbc:h2:mem:app
 username: sa
