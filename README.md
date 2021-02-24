@@ -45,6 +45,9 @@ datasource url: jdbc:h2:mem:app
 username: sa
 password:
 ```
+## Data source
+Endpoint: [https://opendata.ecdc.europa.eu/covid19/nationalcasedeath/json/](https://opendata.ecdc.europa.eu/covid19/nationalcasedeath/json/)  
+More information here: [https://www.ecdc.europa.eu/en/publications-data/data-national-14-day-notification-rate-covid-19](https://www.ecdc.europa.eu/en/publications-data/data-national-14-day-notification-rate-covid-19)
 
 ## Copyright
 &copy;LauraStasiule
